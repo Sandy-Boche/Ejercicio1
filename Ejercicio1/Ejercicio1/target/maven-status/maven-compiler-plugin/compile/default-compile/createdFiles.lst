@@ -1,0 +1,4 @@
+com\intecap\Ejercicio1\model\Task.class
+com\intecap\Ejercicio1\controller\TaskController.class
+com\intecap\Ejercicio1\Ejercicio1Application.class
+com\intecap\Ejercicio1\service\TaskService.class

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Gestión de Tareas</title>
+</head>
+<body>
+<h1>Gestión de Tareas</h1>
+
+<!-- Formulario -->
+<form th:action="@{/tasks}" th:object="${task}" method="post">
+    <input type="text" th:field="*{title}" placeholder="Título de la tarea" required />
+    <input type="text" th:field="*{description}" placeholder="Descripción" />
+    <button type="submit">Agregar</button>
+</form>
+
+<!-- Lista de tareas -->
+<ul>
+    <li th:each="task : ${tasks}">
+        <span th:text="${task.title}"></span> - <span th:text="${task.description}"></span>
+        <form th:action="@{/tasks/delete/{id}(id=${task.id})}" method="post">
+            <button type="submit">Eliminar</button>
+        </form>
+    </li>
+</ul>
+</body>
+</html>
